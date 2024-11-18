@@ -1,0 +1,30 @@
+!pip install nest_asyncio
+
+
+import nest_asyncio
+import discord
+from discord.ext import commands
+
+# This lines of code defines the intents(in other words action to be triggered)
+intents = discord.Intents.default()
+intents.members = True
+
+# This lines of code initializes the  bot
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+@bot.event
+async def on_member_join(member):
+    # Find the welcome channel
+    channel = discord.utils.get(member.guild.text_channels, name='welcome-channel')
+    if channel:
+        await channel.send(f'Hello, {member.mention}, welcome to the Tripleten test community happy to have you join us!')
+
+
+nest_asyncio.apply()
+
+# This line of code runs the bot
+bot.run('MTMwODEzMTM1NTY5NTEyMDQwNA.GetYEV.fR3W5ECRNHs8Yjz76o5cODfFlZAe46szEVDYz4')

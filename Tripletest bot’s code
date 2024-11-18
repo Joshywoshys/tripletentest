@@ -27,4 +27,4 @@ async def on_member_join(member):
 nest_asyncio.apply()
 
 # This line of code runs the bot
-bot.run('MTMwODEzMTM1NTY5NTEyMDQwNA.GetYEV.fR3W5ECRNHs8Yjz76o5cODfFlZAe46szEVDYz4')
+bot.run('bot_token')
